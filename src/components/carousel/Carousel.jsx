@@ -54,7 +54,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           onClick={() => navigation("left")}
         />
         <BsFillArrowRightCircleFill
-          className="carouselRighttNav arrow"
+          className="carouselRightNav arrow"
           onClick={() => navigation("right")}
         />
         {!loading ? (
@@ -73,7 +73,9 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
-                    <CircleRating rating={item.vote_average.toFixed(1)} />
+                    
+                  <CircleRating rating={item.vote_average.toFixed(1)} />
+                  
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>

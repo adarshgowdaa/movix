@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 import { useSelector, useDispatch } from "react-redux";
-import { getApiConfig } from "./store/homeSlice";
+import { getApiConfig, getGenres } from "./store/homeSlice";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
@@ -19,7 +19,7 @@ function App() {
     fetchApiConfig();
   }, []);
 
-  const fetchApiConfig= async () => {
+  const fetchApiConfig = async () => {
     fetchDataFromApi("/configuration").then((res) => {
       console.log(res);
 
@@ -27,11 +27,13 @@ function App() {
         backdrop: res.images.secure_base_url + "original",
         poster: res.images.secure_base_url + "original",
         logo: res.images.secure_base_url + "original",
-      }
+      };
 
       dispatch(getApiConfig(url));
     });
   };
+
+
   return (
     <BrowserRouter>
       <Header />
@@ -48,4 +50,3 @@ function App() {
 }
 
 export default App;
- 
