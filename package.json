@@ -9,7 +9,7 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
-"dependencies": {
+  "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",

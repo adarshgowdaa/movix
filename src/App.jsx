@@ -34,7 +34,6 @@ function App() {
     });
   };
 
-  
   const genresCall = async () => {
     let promises = [];
     let endPoints = ["tv", "movie"];
@@ -48,7 +47,8 @@ function App() {
     data.map(({ genres }) => {
       return genres.map((item) => (allGenres[item.id] = item));
     });
-    dispatch(getGenres(allGenres));``
+    dispatch(getGenres(allGenres));
+    ``;
   };
 
   return (
