@@ -130,6 +130,21 @@ const DetailsBanner = ({ video, crew }) => {
                         </span>
                       </div>
                     )}
+                    {data?.created_by?.length > 0 && (
+                      <div className="info">
+                        <span className="text bold">
+                          Creator{writer?.length > 1 ? "s" : ""}:{" "}
+                        </span>
+                        <span className="text">
+                          {data.created_by?.map((d, i) => (
+                            <span key={i}>
+                              {d.name}
+                              {data?.created_by.length - 1 !== i && ", "}
+                            </span>
+                          ))}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </ContentWrapper>
